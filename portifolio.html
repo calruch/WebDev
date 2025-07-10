@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 20px 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showTab('personal-info')">Personal Info</a></li>
+            <li><a href="#" onclick="showTab('projects')">Projects</a></li>
+            <li><a href="#" onclick="showTab('links')">Links</a></li>
+            <li><a href="#" onclick="showTab('contact-info')">Contact Info</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="personal-info" class="tab-content active">
+            <h1>Personal Info</h1>
+            <p>Write about yourself here.</p>
+        </div>
+        <div id="projects" class="tab-content">
+            <h1>Projects</h1>
+            <p>Showcase your projects here.</p>
+        </div>
+        <div id="links" class="tab-content">
+            <h1>Links</h1>
+            <p>Provide useful links here.</p>
+        </div>
+        <div id="contact-info" class="tab-content">
+            <h1>Contact Info</h1>
+            <p>Share your contact details here.</p>
+        </div>
+    </main>
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
